@@ -42,6 +42,7 @@ void showAbout()
 int showDelete(List *list, int q)
 {
     int id = 0;
+    int qcheck = q;
     system(CLEAR);
     puts("================ [Delete] ===================");
     puts("0. ID");
@@ -63,67 +64,77 @@ int showDelete(List *list, int q)
         id = enterInt("Write id of mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=Delete(id, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 1)
     {
         int cost = enterInt("Write cost of mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByCost(cost, list));
-        printf("%d", q);
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 2)
     {
         char *name = enterString("Write name of mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByName(name, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 3)
     {
         char *quest = enterString("Write quest for earn mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByQuest(quest, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 4)
     {
         char *achieve = enterString("Write achievement for earn mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByAchieve(achieve, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 5)
     {
         char *character = enterString("Write character from who earned item: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByCharacter(character, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 6)
     {
         double chance = enterDouble("Write drop chance of mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByChance(chance, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 7)
     {
         int addon = enterString("Write addition with this mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByAddon(addon, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 8)
     {
         char *location = enterString("Write location where you can found this mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByLocation(location, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 9)
     {
         double holders = enterDouble("Write percent of mount holders: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByHolders(holders, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     else if (id == 10)
     {
         int rate = enterInt("Write your subjective rate of mount: ");
         puts("");
         printf("%d notes have been deleted\n", q+=DeleteByRate(rate, list));
+        if (qcheck == q) printf("There is no notes for delete");
     }
     printf("Write anything to continue: ");
     getch();
